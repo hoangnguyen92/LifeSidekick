@@ -1,18 +1,12 @@
 {
-	"name": "lifesidekick",
-	"version": "0.0.1",
-	"description": "LifeSideKick web app",
-	"dependencies": {
-		"bootstrap": "~3",
-		"angular": "~1.2",
-		"angular-resource": "~1.2",
-		"angular-mocks": "~1.2",
-		"angular-cookies": "~1.2",
-		"angular-animate": "~1.2",
-		"angular-touch": "~1.2",
-		"angular-sanitize": "~1.2",
-		"angular-bootstrap": "~0.11.2",
-		"angular-ui-utils": "~0.1.1",
-		"angular-ui-router": "~0.2.11"
-	}
+  "name": "ionicParseSeed",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.0.0-rc.1",
+    "parse": "~1.3.5",
+    "CryptoJS": "~3.1.12",
+    "ionic-rating": "~0.1.0",
+    "ionic-ion-swipe-cards": "*",
+    "angular-cache": "~4.1.0"
+  }
 }

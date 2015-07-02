@@ -1,0 +1,19 @@
+<ion-view view-title="Offers Feed" class="bg-color">
+    <ion-content>
+        <div class="list card" ng-repeat="offer in offers">
+            <div class="item bar bar-header card-header">
+                <h2><b>{{ offer.getName() }}</b> by {{ offer.getOwner().get('username')}} </h2>
+            </div>
+
+            <div class="item item-body center">
+                <p>"{{ offer.getDescription() }}"</p>
+                <p>{{ offer.getPrice() | currency }}</p>
+                <p>{{offer.createdAt | date: longDate}}</p>
+            </div>
+
+            <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item" ng-click="onApply()">Apply</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

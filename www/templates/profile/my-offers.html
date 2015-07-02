@@ -1,0 +1,34 @@
+<ion-view view-title="My Offers" class="bg-color">
+    <ion-content>
+        <div class="center">
+            <a class="button button-balanced" ui-sref="app.new-offer">Make New Offer</a>
+        </div>
+        <div class="list card" ng-repeat="offer in offers">
+            <div class="item bar bar-header card-header">
+                <h2><b>{{offer.get('name')}}</b> - {{offer.get('price') | currency}}</h2>
+            </div>
+
+            <div class="item item-body center">
+                <p ng-click="test()">"{{offer.get('description')}}"</p>
+                <p>status: <b>{{offer.get('status') | uppercase}}</b></p>
+                <p>{{offer.createdAt | date: long}}</p>
+            </div>
+
+            <div class="item tabs tabs-secondary tabs-icon-left" ng-if="(offer.get('status') == 'new')">
+                <a class="tab-item" ui-sref="app.offer-send({offerId: offer.id})">
+                    <!--<i class="icon ion-checkmark-round"></i>-->
+                    Send Offer
+                </a>
+            </div>
+            <div class="item tabs tabs-secondary tabs-icon-left" ng-if="offer.get('status') == 'pending' ">
+                <a class="tab-item" ui-sref="app.pay({offerId: offer.id})">
+                    <!--<i class="icon ion-checkmark-round"></i>-->
+                    Done
+                </a>
+            </div>
+        </div>
+        <div style="height: 220px">
+
+        </div>
+    </ion-content>
+</ion-view>

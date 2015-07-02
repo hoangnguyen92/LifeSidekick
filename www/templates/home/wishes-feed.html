@@ -1,0 +1,24 @@
+<ion-view view-title="Wishes Feed" class="bg-color">
+    <ion-content>
+        <div class="list card" ng-repeat="wish in wishes">
+            <div class="item bar bar-header card-header" >
+                <h2><b>{{wish.getName()}}</b> by {{wish.get("owner").get("username")}}</h2>
+
+            </div>
+
+            <div class="item item-body center">
+                <p>"{{ wish.getDescription() | limitTo:50 }}"</p>
+                <img class="full-image" ng-src="{{wish.getPhoto()}}" alt=""/>
+                <p>{{wish.createdAt | date:long}}</p>
+            </div>
+
+            <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item"
+                   ui-sref="app.wish-detail({wishId: wish.id})">
+                    <i class="icon ion-ios-information"></i>
+                    Detail
+                </a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

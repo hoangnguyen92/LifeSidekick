@@ -1,9 +1,11 @@
-.DS_Store
-.nodemonignore
-.sass-cache/
-npm-debug.log
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+
 node_modules/
-public/lib
-app/tests/coverage/
-.bower-*/
+platforms/
+plugins/
+resources/
+
 .idea/
+.c9/
+hooks/
