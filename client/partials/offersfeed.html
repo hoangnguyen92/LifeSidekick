@@ -1,0 +1,35 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h1 class="page-header">Offers</h1>
+            <ol class="breadcrumb">
+                <li><a href="#/">Home</a>
+                </li>
+                <li class="active">Offers</li>
+            </ol>
+        </div>
+
+    </div>
+
+    <div class="row" ng-repeat="item in offers">
+        <div class="col-lg-12">
+
+            <h2 class="page-header"> <img src="img/ionic.png" class="img-thumbnail" alt="Rounded Image" width="50" height="50"> {{item.owner.name}} 
+                <small> offers </small> 
+                {{item.productName}}
+                <span class="pull-right">${{item.price}}</span>
+            </h2>
+            <blockquote>
+                <p>{{item.productDescription}}</p>
+                <h3>Time remaining: {{_timeLeft[$index]}}</h3>
+                <small> from <cite>{{item.createdDate | date:'MM/dd/yyyy'}}</cite></small>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Apply</button>
+                </div>
+            </blockquote>
+        </div>
+    </div>
+</div>
+<!-- /.container -->

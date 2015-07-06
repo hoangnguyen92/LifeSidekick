@@ -1,0 +1,15 @@
+<ion-view view-title="Offer Send" class="bg-color">
+    <ion-nav-buttons side="primary">
+        <a class="button icon-left ion-chevron-left button-clear button-light"
+           ui-sref="app.profile.about.my-offers"></a>
+    </ion-nav-buttons>
+
+    <ion-content>
+        <ion-item ng-repeat="user in users">
+            <div class="item"><b>{{ user.getUsername() }}</b> - {{ user.get('location') }} miles from here</div>
+            <label class="item">
+                <button class="button button-block button-positive" ng-click=sendOffer(user)> Send to user</button>
+            </label>
+        </ion-item>
+    </ion-content>
+</ion-view>

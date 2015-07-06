@@ -1,0 +1,49 @@
+<!-- Page Content -->
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h1 class="page-header">Wishes</h1>
+            <ol class="breadcrumb">
+                <li><a href="#/">Home</a>
+                </li>
+                <li class="active">Wishes Feed</li>
+            </ol>
+        </div>
+
+    </div>
+
+    <div class="row" ng-repeat="item in wishes">
+        <div class="col-lg-12">
+
+            <h2 class="page-header"> <img src="img/ionic.png" class="img-thumbnail" alt="Rounded Image" width="50" height="50"> {{item.owner.name}} 
+                <small> wants </small> 
+                {{item.productName}}
+            </h2>
+            <blockquote>
+                <div id="{{item._id}}" class="carousel slide">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#{{item._id}}" data-slide-to="{{$index}}"  ng-repeat="img in item.images track by $index" ng-class="{'active': $index == 0}"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item" ng-repeat="img in item.images track by $index" ng-class="{'active': $index == 0}">
+                            <div class="fill" style="background-image:url('{{img.url}}');"></div>
+                        </div>
+                    </div>
+                </div>
+                <p>{{item.productDescription}}</p>
+                <div class="progress progress-striped active" style="height: 25px;">
+                    <div class="progress-bar" style="width: {{item.progress}}%"></div>
+                </div>
+                <small> from <cite>{{item.createdDate}}</cite></small>
+            </blockquote>
+        </div>
+    </div>
+
+</div>
+<!-- /.container -->

@@ -1,0 +1,28 @@
+<ion-view view-title="Edit Profile" class="bg-color">
+    <ion-nav-buttons side="primary">
+        <a class="button icon-left ion-chevron-left button-clear button-light"
+           ui-sref="app.profile.about.my-wishes"></a>
+    </ion-nav-buttons>
+
+    <ion-content>
+        <form ng-submit="doSave(userData)">
+            <div class="list">
+                <label class="item item-input">
+                    <input type="text" placeholder="{{user.getFullName()}}" ng-model="userData.fullname">
+                </label>
+                <label class="item item-input">
+                    <input type="email" placeholder="{{user.getEmail()}}" ng-model="userData.email">
+                </label>
+                <label class="item item-input">
+                    <textarea placeholder="{{user.getSkills() == '' ? 'Your skills' : user.getSkills()}}" ng-model="userData.skills"></textarea>
+                </label>
+                <label class="item item-input">
+                    <input type="password" placeholder="New Password" ng-model="userData.password">
+                </label>
+                <label class="item">
+                    <button class="button button-block button-positive" type="submit">Save</button>
+                </label>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>
